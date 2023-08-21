@@ -1,25 +1,33 @@
 /* global google */
 import logo from './logo.svg';
 import './App.css';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import jwt_decode from 'jwt-decode';
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [userInfo, setUserInfo] = useState(null)
 
-  const onOneTapSignedIn = response => {
+  const handleCredentialResponse = response => {
     setIsSignedIn(true)
     const decodedToken = jwt_decode(response.credential)
     setUserInfo({...decodedToken})
   }
 
+  const googleButton = useRef(null);
+
   const initializeGSI = () => {
     google.accounts.id.initialize({
       client_id: '944301045116-usq3bf0h2algmn9g39gp34qobs82171v.apps.googleusercontent.com',
       cancel_on_tap_outside: false,
-      callback: onOneTapSignedIn
+      callback: onOneTapSignedIn11
     });
+
+    google.accounts.id.renderButton(
+      googleButton.current, 
+      { theme: 'outline', size: 'large' } 
+    );
+
     google.accounts.id.prompt((notification) => {
       if (notification.isNotDisplayed()) {
         console.log(notification.getNotDisplayedReason())
@@ -46,6 +54,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div ref={googleButton}></div>
         <img src={logo} className="App-logo" alt="logo" />
         { isSignedIn && userInfo ?
           <div>
