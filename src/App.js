@@ -20,7 +20,7 @@ function App() {
     google.accounts.id.initialize({
       client_id: '944301045116-usq3bf0h2algmn9g39gp34qobs82171v.apps.googleusercontent.com',
       cancel_on_tap_outside: false,
-      callback: onOneTapSignedIn11
+      callback: handleCredentialResponse
     });
 
     google.accounts.id.renderButton(
@@ -39,7 +39,7 @@ function App() {
     });
   }
 
-  const signout = () => {
+  const signOut = () => {
     // refresh the page
     window.location.reload();
   }
@@ -59,7 +59,7 @@ function App() {
         { isSignedIn && userInfo ?
           <div>
             Hello {userInfo.name} ({userInfo.email})
-            <div className="g_id_signout" onClick={() => signout()}>Sign Out</div>
+            <div className="g_id_signout" onClick={() => signOut()}>Sign Out</div>
           </div> :
           <div>You are not signed in</div>
         }
