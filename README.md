@@ -23,7 +23,7 @@ Then `npm install`, and `npm start`
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-May be need run
+May be need run if `npm run start` error
 
 ```powershell
 
@@ -35,10 +35,9 @@ npm audit fix --force
 
 ```
 
-May be need modify `package.json`
+May be need modify `package.json` if `npm run start` error
 
 ```json
-
 {
 
  "scripts": {
@@ -49,8 +48,6 @@ May be need modify `package.json`
   },
 
 }
-
-
 
 ```
 
