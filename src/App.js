@@ -16,7 +16,7 @@ function App() {
 
   const initializeGSI = () => {
     google.accounts.id.initialize({
-      client_id: 'insert-your-client-id-here',
+      client_id: '944301045116-usq3bf0h2algmn9g39gp34qobs82171v.apps.googleusercontent.com',
       cancel_on_tap_outside: false,
       callback: onOneTapSignedIn
     });

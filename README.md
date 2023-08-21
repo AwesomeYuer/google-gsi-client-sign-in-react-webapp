@@ -9,3 +9,36 @@ Refer to this post here for the details of the demo. [Passwordless sign-in with 
 
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+May be need run
+
+```powershell
+
+npm i react-scripts@latest
+
+npm audit fix
+
+npm audit fix --force
+
+```
+
+May be need modify `package.json`
+
+```json
+
+{
+
+ "scripts": {
+    "start": "react-scripts start --openssl-legacy-provider start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+
+}
+
+
+
+```
+
