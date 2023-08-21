@@ -9,11 +9,12 @@ Then `npm install`, and `npm start`
 
 
 * use `one-tap` sign-in
-Refer to this post here for the details of the demo. 
-[Passwordless sign-in with Google One Tap Sign-In for Web](https://www.intricatecloud.io/2020/12/passwordless-sign-in-with-google-one-tap-for-web/)
+    Refer to this post here for the details of the demo. 
+
+    [Passwordless sign-in with Google One Tap Sign-In for Web](https://www.intricatecloud.io/2020/12/passwordless-sign-in-with-google-one-tap-for-web/)
 
 * use `Login button` sign-in
-https://stackoverflow.com/questions/72209749/react-google-identity-services
+    https://stackoverflow.com/questions/72209749/react-google-identity-services
 
 
 ---
