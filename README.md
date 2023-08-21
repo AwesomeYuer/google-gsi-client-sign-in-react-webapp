@@ -1,6 +1,6 @@
 # google-gsi-client-sign-in-react-webapp
 
-## support both one-tap sign-in and login button
+## support both `one-tap` and `login button` sign-in
 
 # Usage
 Open src/App.js and insert the client ID where it says `insert-client-id-here` you created on the Google Developer Console [link here](https://console.developers.google.com/apis/credentials).
