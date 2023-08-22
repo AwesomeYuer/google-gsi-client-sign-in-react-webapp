@@ -5,11 +5,11 @@ import { useState, useEffect, useRef } from 'react'
 import jwt_decode from 'jwt-decode';
 
 function App() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isGSignedIn, setIsGSignedIn] = useState(false);
   const [userInfo, setUserInfo] = useState(null)
 
   const handleCredentialResponse = response => {
-    setIsSignedIn(true)
+    setIsGSignedIn(true)
     const decodedToken = jwt_decode(response.credential)
     setUserInfo({...decodedToken})
   }
@@ -20,6 +20,7 @@ function App() {
     google.accounts.id.initialize({
       client_id: '944301045116-usq3bf0h2algmn9g39gp34qobs82171v.apps.googleusercontent.com',
       cancel_on_tap_outside: false,
+      //use_fedcm_for_prompt:true,
       callback: handleCredentialResponse
     });
 
@@ -39,7 +40,7 @@ function App() {
     });
   }
 
-  const signOut = () => {
+  const gSignOut = () => {
     // refresh the page
     window.location.reload();
   }
@@ -56,10 +57,11 @@ function App() {
       <header className="App-header">
         <div ref={googleButton}></div>
         <img src={logo} className="App-logo" alt="logo" />
-        { isSignedIn && userInfo ?
+        { isGSignedIn && userInfo ?
           <div>
             Hello {userInfo.name} ({userInfo.email})
-            <div className="g_id_signout" onClick={() => signOut()}>Sign Out</div>
+            <br />
+            <button className="g_id_signout" onClick={() => gSignOut()}>Sign Out</button>
           </div> :
           <div>You are not signed in</div>
         }
